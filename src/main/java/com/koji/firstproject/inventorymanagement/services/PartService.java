@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.koji.firstproject.inventorymanagement.models.Part;
-import com.koji.firstproject.inventorymanagement.models.Warehouse;
 import com.koji.firstproject.inventorymanagement.repositories.PartRepository;
 
 @Service
