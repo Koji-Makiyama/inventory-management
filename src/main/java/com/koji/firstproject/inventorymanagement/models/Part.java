@@ -5,10 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-
-import org.springframework.lang.Nullable;
-
 import lombok.Data;
 
 @Entity
@@ -26,5 +24,9 @@ public class Part {
 
     @Column(name = "part_description")
     private String partDescription;
+
+    @ManyToOne
+    private Order order;
+
 
 }

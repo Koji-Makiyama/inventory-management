@@ -29,4 +29,8 @@ public class WarehouseService {
         }
     }
 
+    public Warehouse saveWarehouse(Warehouse warehouse) {
+        return warehouseRepository.save(warehouse);
+    }
+
 }
