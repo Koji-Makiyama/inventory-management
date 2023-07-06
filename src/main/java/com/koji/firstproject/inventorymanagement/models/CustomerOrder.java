@@ -14,16 +14,15 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "ORDERS")
-public class Order {
+@Table(name = "CUST_ORDER")
+public class CustomerOrder {
 
     @Id
-    @Column
+    @Column(unique = true)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @JsonBackReference
-    @OneToMany(targetEntity = Part.class, mappedBy = "order")
+    @OneToMany(targetEntity = Part.class, mappedBy = "customerOrder")
     private List<Part> partsOrdered;
 
 }

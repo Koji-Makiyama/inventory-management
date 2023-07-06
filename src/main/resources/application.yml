@@ -3,14 +3,17 @@ spring:
         #driver-class-name: com.postgresql.Driver
         url: jdbc:postgresql://localhost:5432/inventory_management
         username: postgres
-        password: 
+        password: KojiSS
     output:
         ansi:
             enabled: ALWAYS
-    #jpa:
+    jpa:
         #database-platform: org.hibernate.dialect.PostgreSQLDialect
-        #properties:
-            #hibernate:
-                #dialect: org.hibernate.dialect.PostgreSQLDialect
+        generate-ddl: true
+        hibernate:
+            ddl-auto: create
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.PostgreSQLDialect
 server:
     port: 8080

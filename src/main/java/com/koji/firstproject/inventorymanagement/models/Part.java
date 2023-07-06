@@ -5,12 +5,13 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import lombok.Data;
 
 @Entity
-@Table(name = "PARTS")
+@Table(name = "PART")
 @Data
 public class Part {
 
@@ -25,8 +26,15 @@ public class Part {
     @Column(name = "part_description")
     private String partDescription;
 
-    @ManyToOne
-    private Order order;
+    @Column(name = "part_quantity")
+    private int quantity;
 
+    @ManyToOne
+    @JoinColumn(name = "inventory_id")
+    private Inventory inventory;
+
+    @ManyToOne
+    @JoinColumn(name = "customer_order_id")
+    private CustomerOrder customerOrder;
 
 }

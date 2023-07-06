@@ -5,12 +5,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "EMPLOYEES")
+@Table(name = "EMPLOYEE")
 public class Employee {
 
     @Id
@@ -26,5 +28,9 @@ public class Employee {
 
     @Column(name = "hourly_rate")
     private int hourlyRate;
+
+    @ManyToOne
+    @JoinColumn(name = "warehouse_id", nullable=false)
+    private Warehouse warehouse;
 
 }
