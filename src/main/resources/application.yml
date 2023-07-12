@@ -8,12 +8,13 @@ spring:
         ansi:
             enabled: ALWAYS
     jpa:
-        #database-platform: org.hibernate.dialect.PostgreSQLDialect
+
         generate-ddl: true
         hibernate:
             ddl-auto: create
         properties:
             hibernate:
                 dialect: org.hibernate.dialect.PostgreSQLDialect
+        #database-platform: org.hibernate.dialect.PostgreSQLDialect
 server:
     port: 8080

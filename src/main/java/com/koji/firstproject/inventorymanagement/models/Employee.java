@@ -7,6 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import lombok.Data;
 
@@ -29,8 +30,7 @@ public class Employee {
     @Column(name = "hourly_rate")
     private int hourlyRate;
 
-    @ManyToOne
-    @JoinColumn(name = "warehouse_id", nullable=false)
+    @OneToOne
     private Warehouse warehouse;
 
 }
