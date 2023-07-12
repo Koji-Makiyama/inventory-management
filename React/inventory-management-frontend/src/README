@@ -2,4 +2,5 @@ For fresh clone, do the following:
 
 cd inventory-management-frontend
 npm install
+npm i @trussworks/react-uswds
 npm run dev
