@@ -32,7 +32,7 @@ public class Inventory {
     private Warehouse warehouse;
 
     @JsonBackReference
-    @OneToMany(targetEntity = Part.class, mappedBy = "inventory")
-    private List<Part> parts;
+    @OneToMany(targetEntity = CustomerOrderPart.class, mappedBy = "inventory")
+    private List<CustomerOrderPart> parts;
 
 }

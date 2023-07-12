@@ -1,7 +1,5 @@
 package com.koji.firstproject.inventorymanagement.models;
 
-import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,24 +7,30 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import lombok.Data;
 
-@Data
 @Entity
-@Table(name = "CUST_ORDER")
-public class CustomerOrder {
+@Table(name = "PART")
+@Data
+public class CustomerOrderPart {
 
     @Id
-    @Column(unique = true)
+    @Column
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @OneToMany(targetEntity = CustomerOrderPart.class, mappedBy = "customerOrder")
-    private List<CustomerOrderPart> partsOrdered;
+    @Column(name = "part_name")
+    private String partName;
+
+    @Column(name = "part_description")
+    private String partDescription;
+
+    @Column(name = "part_quantity")
+    private int quantity;
 
     @ManyToOne
-    @JoinColumn(name = "customer", nullable=false)
-    private Customer customer;
+    @JoinColumn(name = "customer_order_id")
+    private CustomerOrder customerOrder;
+
 }

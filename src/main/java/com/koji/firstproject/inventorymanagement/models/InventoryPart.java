@@ -13,7 +13,7 @@ import lombok.Data;
 @Entity
 @Table(name = "PART")
 @Data
-public class Part {
+public class InventoryPart {
 
     @Id
     @Column
@@ -33,8 +33,5 @@ public class Part {
     @JoinColumn(name = "inventory_id")
     private Inventory inventory;
 
-    @ManyToOne
-    @JoinColumn(name = "customer_order_id")
-    private CustomerOrder customerOrder;
 
 }

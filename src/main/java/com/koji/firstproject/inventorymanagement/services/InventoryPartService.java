@@ -6,21 +6,21 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.koji.firstproject.inventorymanagement.models.Part;
-import com.koji.firstproject.inventorymanagement.repositories.PartRepository;
+import com.koji.firstproject.inventorymanagement.models.InventoryPart;
+import com.koji.firstproject.inventorymanagement.repositories.InventoryPartRepository;
 
 @Service
-public class PartService {
+public class InventoryPartService {
     
     @Autowired
-    PartRepository partRepository;
+    InventoryPartRepository partRepository;
     
-    public List<Part> findAllParts() {
+    public List<InventoryPart> findAllParts() {
         return partRepository.findAll();
     }
 
-    public Part findPartById(int id) {
-        Optional<Part> part = partRepository.findById(id);
+    public InventoryPart findPartById(int id) {
+        Optional<InventoryPart> part = partRepository.findById(id);
 
         if(part.isPresent()){
             return part.get();
