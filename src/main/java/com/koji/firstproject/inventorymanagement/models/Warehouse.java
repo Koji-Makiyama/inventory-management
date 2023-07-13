@@ -2,6 +2,7 @@ package com.koji.firstproject.inventorymanagement.models;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -27,12 +28,12 @@ public class Warehouse {
     @Column(name = "location")
     private String location;
 
-    @JsonBackReference
+    @JsonBackReference(value="warehouse-employees")
     @OneToMany(targetEntity = Employee.class, mappedBy = "warehouse")
     private List<Employee> employees;
 
-    @JsonBackReference
-    @OneToOne(targetEntity = Inventory.class, mappedBy = "warehouse")
+    @JsonBackReference(value="warehouse-inventory")
+    @OneToOne(targetEntity = Inventory.class, mappedBy = "warehouse", cascade = {CascadeType.ALL})
     @JoinColumn(name = "inventory_id", referencedColumnName = "id")
     private Inventory inventory;
 

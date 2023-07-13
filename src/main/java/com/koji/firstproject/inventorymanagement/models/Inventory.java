@@ -26,13 +26,13 @@ public class Inventory {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @JsonBackReference
+    @JsonBackReference(value="inventory-warehouse-id")
     @OneToOne
     @JoinColumn(name = "warehouse_id")
     private Warehouse warehouse;
 
-    @JsonBackReference
-    @OneToMany(targetEntity = CustomerOrderPart.class, mappedBy = "inventory")
+    @JsonBackReference(value="inventory-order-parts")
+    @OneToMany(targetEntity = InventoryPart.class, mappedBy = "inventory")
     private List<CustomerOrderPart> parts;
 
 }

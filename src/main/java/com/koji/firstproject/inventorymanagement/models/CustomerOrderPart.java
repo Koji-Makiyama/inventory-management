@@ -11,7 +11,7 @@ import javax.persistence.Table;
 import lombok.Data;
 
 @Entity
-@Table(name = "PART")
+@Table(name = "ORDER_PART")
 @Data
 public class CustomerOrderPart {
 
