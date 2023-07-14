@@ -13,9 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.koji.firstproject.inventorymanagement.models.CustomerOrder;
 import com.koji.firstproject.inventorymanagement.models.InventoryPart;
-import com.koji.firstproject.inventorymanagement.services.CustomerOrderService;
 import com.koji.firstproject.inventorymanagement.services.InventoryPartService;
 
 @RestController
