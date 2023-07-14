@@ -4,7 +4,7 @@ export default function InventoriesCreateForm({ addNewEmployee }) {
 
     function handleSubmit(event) {
 
-        const url = 'http://localhost:8080/employees';
+        const url = 'http://localhost:8080/inventories';
         event.preventDefault();
 
         const data = new FormData(event.target);

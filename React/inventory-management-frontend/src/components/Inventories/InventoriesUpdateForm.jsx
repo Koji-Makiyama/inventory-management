@@ -31,7 +31,7 @@ export default function InventoriesForm({ addNewWarehouse }) {
     return (
         <>
             <Form onSubmit={handleSubmit}>
-            <Label htmlFor="employee-update-input-id">Employee Id</Label>
+            <Label htmlFor="employee-update-input-id">Inventory Id</Label>
                 <TextInput id="employee-update-input-id" name="employeeId" type="text"></TextInput>
                 <Label htmlFor="employee-update-input-first-name">Employee First Name</Label>
                 <TextInput id="employee-update-input-first-name" name="employeeFirst" type="text"></TextInput>
