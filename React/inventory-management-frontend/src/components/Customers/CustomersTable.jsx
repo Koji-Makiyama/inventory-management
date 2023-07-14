@@ -7,10 +7,8 @@ export default function CustomersTable({ tableData }) {
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Hourly Rate</th>
-                        <th>Warehouse Id</th>
+                        <th>Name</th>
+                        <th>Orders</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -20,8 +18,6 @@ export default function CustomersTable({ tableData }) {
                                 <td>{employee.id}</td>
                                 <td>{employee.firstName}</td>
                                 <td>{employee.lastName}</td>
-                                <td>{employee.hourlyRate}</td>
-                                <td>{employee.warehouseId}</td>
                             </tr>
                         );
                     })}

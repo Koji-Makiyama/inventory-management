@@ -1,9 +1,9 @@
 import { Grid, GridContainer, Modal, ModalHeading, ModalToggleButton } from "@trussworks/react-uswds";
 import { useEffect, useRef, useState } from "react";
-import EmployeesTable from "../components/Employees/EmployeesTable";
 import EmployeesGetForm from "../components/Employees/EmployeesCreateForm";
 import EmployeesUpdateForm from "../components/Employees/EmployeesUpdateForm";
 import EmployeesDeleteForm from "../components/Employees/EmployeesDeleteForm";
+import CustomerOrderPartsTable from "../components/CustomerOrderParts/CustomerOrderPartsTable";
 
 export default function CustomerOrderParts() {
 
@@ -53,7 +53,7 @@ export default function CustomerOrderParts() {
                     <ModalToggleButton modalRef={modalRef3} opener>Delete Customer Order Part</ModalToggleButton>
                 </Grid>
                 <Grid col>
-                    <EmployeesTable tableData={employees}/>
+                    <CustomerOrderPartsTable tableData={employees}/>
                 </Grid>
             </GridContainer>
 

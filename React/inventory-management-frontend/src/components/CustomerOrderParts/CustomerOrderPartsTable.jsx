@@ -7,10 +7,7 @@ export default function CustomerOrderPartsTable({ tableData }) {
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Hourly Rate</th>
-                        <th>Warehouse Id</th>
+                        <th>Order Id</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -19,9 +16,6 @@ export default function CustomerOrderPartsTable({ tableData }) {
                             <tr key={employee.id}>
                                 <td>{employee.id}</td>
                                 <td>{employee.firstName}</td>
-                                <td>{employee.lastName}</td>
-                                <td>{employee.hourlyRate}</td>
-                                <td>{employee.warehouseId}</td>
                             </tr>
                         );
                     })}

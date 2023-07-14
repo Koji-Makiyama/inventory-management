@@ -1,6 +1,6 @@
 import { Grid, GridContainer, Modal, ModalHeading, ModalToggleButton } from "@trussworks/react-uswds";
 import { useEffect, useRef, useState } from "react";
-import EmployeesTable from "../components/Employees/EmployeesTable";
+import InventoriesTable from "../components/Inventories/InventoriesTable";
 import EmployeesGetForm from "../components/Employees/EmployeesCreateForm";
 import EmployeesUpdateForm from "../components/Employees/EmployeesUpdateForm";
 import EmployeesDeleteForm from "../components/Employees/EmployeesDeleteForm";
@@ -53,7 +53,7 @@ export default function Inventories() {
                     <ModalToggleButton modalRef={modalRef3} opener>Delete Inventory</ModalToggleButton>
                 </Grid>
                 <Grid col>
-                    <EmployeesTable tableData={employees}/>
+                    <InventoriesTable tableData={employees}/>
                 </Grid>
             </GridContainer>
 

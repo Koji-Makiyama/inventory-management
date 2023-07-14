@@ -7,9 +7,6 @@ export default function InventoriesTable({ tableData }) {
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Hourly Rate</th>
                         <th>Warehouse Id</th>
                     </tr>
                 </thead>
@@ -18,9 +15,6 @@ export default function InventoriesTable({ tableData }) {
                         return (
                             <tr key={employee.id}>
                                 <td>{employee.id}</td>
-                                <td>{employee.firstName}</td>
-                                <td>{employee.lastName}</td>
-                                <td>{employee.hourlyRate}</td>
                                 <td>{employee.warehouseId}</td>
                             </tr>
                         );
