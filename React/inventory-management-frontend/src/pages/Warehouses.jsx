@@ -1,7 +1,7 @@
 import { Grid, GridContainer, Modal, ModalHeading, ModalToggleButton } from "@trussworks/react-uswds";
 import { useEffect, useRef, useState } from "react";
 import WarehousesTable from "../components/Warehouses/WarehousesTable";
-import WarehousesGetForm from "../components/Warehouses/WarehousesGetForm";
+import WarehousesGetForm from "../components/Warehouses/WarehousesCreateForm";
 import WarehousesUpdateForm from "../components/Warehouses/WarehousesUpdateForm";
 import WarehousesDeleteForm from "../components/Warehouses/WarehousesDeleteForm";
 

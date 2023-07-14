@@ -28,13 +28,7 @@ public class Warehouse {
     @Column(name = "location")
     private String location;
 
-    @JsonBackReference(value="warehouse-employees")
-    @OneToMany(targetEntity = Employee.class, mappedBy = "warehouse")
-    private List<Employee> employees;
-
-    @JsonBackReference(value="warehouse-inventory")
-    @OneToOne(targetEntity = Inventory.class, mappedBy = "warehouse", cascade = {CascadeType.ALL})
-    @JoinColumn(name = "inventory_id", referencedColumnName = "id")
-    private Inventory inventory;
+    @Column(name = "inventory_id")
+    private int inventoryId;
 
 }

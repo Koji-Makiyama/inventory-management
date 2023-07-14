@@ -1,6 +1,6 @@
 import { Button, Form, Label, TextInput } from "@trussworks/react-uswds";
 
-export default function WarehousesUpdateForm({ updateWarehouse }) {
+export default function WarehousesCreateForm({ addNewWarehouse }) {
 
     function handleSubmit(event) {
 
@@ -10,12 +10,11 @@ export default function WarehousesUpdateForm({ updateWarehouse }) {
         const data = new FormData(event.target);
 
         const newWarehouse = {
-            id: data.get('warehouseId'),
             location: data.get('warehouseLocation')
         }
 
-        fetch(url + '/warehouse/put', {
-            method: 'PUT',
+        fetch(url + '/warehouse', {
+            method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -23,7 +22,7 @@ export default function WarehousesUpdateForm({ updateWarehouse }) {
         })
             .then(data => data.json())
             .then(returnedData => {
-                updateWarehouse(returnedData);
+                addNewWarehouse(returnedData);
                 event.target.reset();
             })
             .catch(error => console.error(error));
@@ -32,8 +31,6 @@ export default function WarehousesUpdateForm({ updateWarehouse }) {
     return (
         <>
             <Form onSubmit={handleSubmit}>
-            <Label htmlFor="warehouse-id-input">Warehouse Id</Label>
-                <TextInput id="warehouse-id-input" name="warehouseId" type="text"></TextInput>
                 <Label htmlFor="warehouse-location-input">Warehouse Location</Label>
                 <TextInput id="warehouse-location-input" name="warehouseLocation" type="text"></TextInput>
                 <Button type="submit" data-close-modal="true">Submit</Button>

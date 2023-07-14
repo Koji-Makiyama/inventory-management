@@ -13,8 +13,8 @@ export default function WarehousesForm({ addNewWarehouse }) {
             location: data.get('warehouseLocation')
         }
 
-        fetch(url + '/warehouse', {
-            method: 'POST',
+        fetch(url + '/employee/put', {
+            method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -31,8 +31,14 @@ export default function WarehousesForm({ addNewWarehouse }) {
     return (
         <>
             <Form onSubmit={handleSubmit}>
-                <Label htmlFor="warehouse-location-input">Warehouse Location</Label>
-                <TextInput id="warehouse-location-input" name="warehouseLocation" type="text"></TextInput>
+            <Label htmlFor="employee-update-input-id">Employee Id</Label>
+                <TextInput id="employee-update-input-id" name="employeeId" type="text"></TextInput>
+                <Label htmlFor="employee-update-input-first-name">Employee First Name</Label>
+                <TextInput id="employee-update-input-first-name" name="employeeFirst" type="text"></TextInput>
+                <Label htmlFor="employee-update-input-last-name">Employee Last Name</Label>
+                <TextInput id="employee-update-input-last-name" name="employeeLast" type="text"></TextInput>
+                <Label htmlFor="employee-update-input-hourly-rate">Employee Hourly Rate</Label>
+                <TextInput id="employee-update-input-hourly-rate" name="employeeRate" type="text"></TextInput>
                 <Button type="submit" data-close-modal="true">Submit</Button>
             </Form>
         </>

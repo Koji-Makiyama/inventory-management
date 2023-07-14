@@ -30,7 +30,7 @@ public class Employee {
     @Column(name = "hourly_rate")
     private int hourlyRate;
 
-    @OneToOne
-    private Warehouse warehouse;
+    @Column(name = "warehouse_id")
+    private int warehouseId;
 
 }

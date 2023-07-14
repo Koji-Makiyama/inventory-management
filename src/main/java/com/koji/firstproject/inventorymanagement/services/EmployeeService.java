@@ -11,22 +11,26 @@ import com.koji.firstproject.inventorymanagement.repositories.EmployeeRepository
 
 @Service
 public class EmployeeService {
-    
+
     @Autowired
     EmployeeRepository employeeRepository;
-    
-        public List<Employee> findAllEmployees() {
+
+    public List<Employee> findAllEmployees() {
         return employeeRepository.findAll();
     }
 
-    public Employee findWarehouseById(int id) {
+    public Employee findEmployeeById(int id) {
         Optional<Employee> employee = employeeRepository.findById(id);
 
-        if(employee.isPresent()){
+        if (employee.isPresent()) {
             return employee.get();
         } else {
             return null;
         }
+    }
+
+    public Employee saveEmployee(Employee employee) {
+        return employeeRepository.save(employee);
     }
 
 }
