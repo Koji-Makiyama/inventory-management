@@ -11,22 +11,26 @@ import com.koji.firstproject.inventorymanagement.repositories.CustomerOrderPartR
 
 @Service
 public class CustomerOrderPartService {
-    
+
     @Autowired
-    CustomerOrderPartRepository partRepository;
-    
-    public List<CustomerOrderPart> findAllParts() {
-        return partRepository.findAll();
+    CustomerOrderPartRepository customerOrderPartRepository;
+
+    public List<CustomerOrderPart> findAllCustomerOrderParts() {
+        return customerOrderPartRepository.findAll();
     }
 
-    public CustomerOrderPart findPartById(int id) {
-        Optional<CustomerOrderPart> part = partRepository.findById(id);
+    public CustomerOrderPart findCustomerOrderPartById(int id) {
+        Optional<CustomerOrderPart> part = customerOrderPartRepository.findById(id);
 
-        if(part.isPresent()){
+        if (part.isPresent()) {
             return part.get();
         } else {
             return null;
         }
+    }
+
+    public CustomerOrderPart saveCustomerOrderPart(CustomerOrderPart customerOrderPart) {
+        return customerOrderPartRepository.save(customerOrderPart);
     }
 
 }

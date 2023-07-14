@@ -11,22 +11,26 @@ import com.koji.firstproject.inventorymanagement.repositories.InventoryPartRepos
 
 @Service
 public class InventoryPartService {
-    
+
     @Autowired
-    InventoryPartRepository partRepository;
-    
-    public List<InventoryPart> findAllParts() {
-        return partRepository.findAll();
+    InventoryPartRepository inventoryPartRepository;
+
+    public List<InventoryPart> findAllInventoryParts() {
+        return inventoryPartRepository.findAll();
     }
 
-    public InventoryPart findPartById(int id) {
-        Optional<InventoryPart> part = partRepository.findById(id);
+    public InventoryPart findInventoryPartById(int id) {
+        Optional<InventoryPart> part = inventoryPartRepository.findById(id);
 
-        if(part.isPresent()){
+        if (part.isPresent()) {
             return part.get();
         } else {
             return null;
         }
+    }
+
+    public InventoryPart saveInventoryPart(InventoryPart inventoryPart) {
+        return inventoryPartRepository.save(inventoryPart);
     }
 
 }

@@ -14,12 +14,12 @@ public class CustomerService {
     
     @Autowired
     CustomerRepository customerRepository;
-
-        public List<Customer> findAllCustomers() {
+ 
+    public List<Customer> findAllCustomers() {
         return customerRepository.findAll();
     }
 
-    public Customer findWarehouseById(int id) {
+    public Customer findCustomerById(int id) {
         Optional<Customer> customer = customerRepository.findById(id);
 
         if(customer.isPresent()){
@@ -27,6 +27,10 @@ public class CustomerService {
         } else {
             return null;
         }
+    }
+
+    public Customer saveCustomer(Customer customer) {
+        return customerRepository.save(customer);
     }
 
 }
